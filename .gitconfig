@@ -1,0 +1,13 @@
+[alias]
+	unstage = reset HEAD --
+	c = !git add -A && git commit -m
+	fr = !git fetch && git rebase
+	cleanmergecheck = !git branch --merged | grep -v '^*\\|main\\|master\\|staging\\|preprod\\|develop'
+	cleanmerge = !git branch -d `git branch --merged | grep -v '^*\\|main\\|master\\|staging\\|preprod\\|develop'`
+	dev = !git checkout develop && git fetch && git rebase
+	prod = !git checkout master && git fetch && git rebase
+[user]
+	name = Damien LEROY
+	email = dleroy@xxx
+[core]
+	editor = 'C:/Program Files (x86)/Notepad++/notepad++.exe' -multiInst -notabbar -nosession -noPlugin
