@@ -36,8 +36,3 @@ Set-Alias -Name operation-access -Value NAV_OA_FN
 
 Function NAV_BOOM_FN {cd C:\Users\dleroy\source\repos\navigation\boom}
 Set-Alias -Name boom -Value NAV_BOOM_FN
-
-# helper to turn PSCustomObject into a list of key/value pairs
-function GetlaunchSettingsEnvironmentVariable {
-    (Get-Content .\Properties\launchSettings.json | Out-String | ConvertFrom-Json).profiles."OperationAccess.Api".environmentVariables.ASPNETCORE_ENVIRONMENT
-}
