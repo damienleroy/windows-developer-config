@@ -1,14 +1,11 @@
-Import-Module posh-git
-Import-Module oh-my-posh
-Import-Module -Name Terminal-Icons
+Import-Module Terminal-Icons
 Import-Module PSReadLine
 
 Set-PSReadLineOption -PredictionSource History
 Set-PSReadLineOption -PredictionViewStyle ListView
 Set-PSReadLineOption -EditMode Windows
 
-$env:POSH_GIT_ENABLED = $true
-Set-PoshPrompt perso
+oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH\agnosterplus.omp.json" | Invoke-Expression
 
 # global functions
 Function CBIN_FN {Get-ChildItem .\ -include bin,obj -Recurse | ForEach-Object ($_) { Remove-Item $_.FullName -Force -Recurse }}
