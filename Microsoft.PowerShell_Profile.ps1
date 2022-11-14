@@ -1,5 +1,6 @@
 Import-Module Terminal-Icons
 Import-Module PSReadLine
+Import-Module posh-git
 
 Set-PSReadLineOption -PredictionSource History
 Set-PSReadLineOption -PredictionViewStyle ListView
