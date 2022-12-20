@@ -6,7 +6,7 @@ Set-PSReadLineOption -PredictionSource History
 Set-PSReadLineOption -PredictionViewStyle ListView
 Set-PSReadLineOption -EditMode Windows
 
-oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH\agnosterplus.omp.json" | Invoke-Expression
+oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH\agnosterplus-custom.omp.json" | Invoke-Expression
 
 # global functions
 Function CBIN_FN {Get-ChildItem .\ -include bin,obj -Recurse | ForEach-Object ($_) { Remove-Item $_.FullName -Force -Recurse }}
@@ -41,4 +41,13 @@ Set-Alias -Name datainjector -Value NAV_DATAINJECTOR_FN
 # helper to turn PSCustomObject into a list of key/value pairs
 function GetlaunchSettingsEnvironmentVariable {
     (Get-Content .\Properties\launchSettings.json | Out-String | ConvertFrom-Json).profiles."OperationAccess.Api".environmentVariables.ASPNETCORE_ENVIRONMENT
+}
+# Import the Chocolatey Profile that contains the necessary code to enable
+# tab-completions to function for `choco`.
+# Be aware that if you are missing these lines from your profile, tab completion
+# for `choco` will not function.
+# See https://ch0.co/tab-completion for details.
+$ChocolateyProfile = "$env:ChocolateyInstall\helpers\chocolateyProfile.psm1"
+if (Test-Path($ChocolateyProfile)) {
+  Import-Module "$ChocolateyProfile"
 }
