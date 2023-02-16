@@ -2,8 +2,8 @@
 	unstage = reset HEAD --
 	c = !git add -A && git commit -m
 	fr = !git fetch && git rebase
-	cleanmergecheck = !git branch --merged | grep -v '^*\\|main\\|master\\|staging\\|preprod\\|develop'
-	cleanmerge = !git branch -d `git branch --merged | grep -v '^*\\|main\\|master\\|staging\\|preprod\\|develop'`
+	cleanmergecheck = "!f() { git fetch --all --prune; git branch -vv | awk '/: gone]/{print $1}'; }; f"
+	cleanmerge = "!f() { git fetch --all --prune; git branch -vv | awk '/: gone]/{print $1}' | xargs git branch -D; }; f"
 	dev = !git checkout develop && git fetch && git rebase
 	prod = !git checkout master && git fetch && git rebase
 [user]
