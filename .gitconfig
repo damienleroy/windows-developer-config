@@ -4,8 +4,7 @@
 	fr = !git fetch && git rebase
 	cleanmergecheck = "!f() { git fetch --all --prune; git branch -vv | awk '/: gone]/{print $1}'; }; f"
 	cleanmerge = "!f() { git fetch --all --prune; git branch -vv | awk '/: gone]/{print $1}' | xargs git branch -D; }; f"
-	dev = !git checkout develop && git fetch && git rebase
-	prod = !git checkout master && git fetch && git rebase
+	master = !git checkout master && git fetch && git rebase
 [user]
 	name = Damien LEROY
 	email = dleroy@xxx
