@@ -11,10 +11,15 @@ Set-ExecutionPolicy Bypass -Scope LocalMachine -Force;
 More information [here](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.security/set-executionpolicy?view=powershell-7.4)
 
 ### Step 2
-Execute `Install.ps1`.
+Execute `Install.ps1` (It may asking you some confirmations during the process).
 
 ### Step 3
 Install a [Nerd font](https://www.nerdfonts.com/) and configure it in your favorite terminal.
+
+# Miscellaneous
+The script will propose you to install 3 files (.gitconfig / posh-my-git theme / powershell profile). This files are fit to my own usage. Say yes with precautions.
+
+By the way, if you say no, take a look to [Microsoft.PowerShell_Profile.ps1](./miscellaneous/Microsoft.PowerShell_Profile.ps1) and create your own with the imported modules.
 
 # Installed Tools
 The script install the follwing tools:
