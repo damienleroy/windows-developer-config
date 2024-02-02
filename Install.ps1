@@ -1,4 +1,5 @@
 Set-ExecutionPolicy Bypass -Scope Process -Force;
+Set-PSRepository -Name "PSGallery" -InstallationPolicy Trusted;
 
 ./Scripts/Powershell.ps1
 ./Scripts/Winget-Packages.ps1
