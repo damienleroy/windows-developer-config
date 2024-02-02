@@ -29,5 +29,14 @@ function installsilently($url, $name) {
 }
 
 
-# INSTALL VS Extensions
+# INSTALL WIX TOOLSET
+
+echo "Install WIX exe"
+$url = "https://github.com/wixtoolset/wix3/releases/download/wix3112rtm/wix311.exe"
+$outpath = "$env:temp/myexe.exe"
+Invoke-WebRequest -Uri $url -OutFile $outpath
+
+Start-Process -Filepath $outpath
+
+# INSTALL WIX VS EXTENSION
 installsilently https://wixtoolset.gallerycdn.vsassets.io/extensions/wixtoolset/wixtoolsetvisualstudio2022extension/1.0.0.18/1640535397051/Votive2022.vsix Voltive2022.vsix

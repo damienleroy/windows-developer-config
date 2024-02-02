@@ -16,4 +16,5 @@ winget install Notepad++.Notepad++
 winget install Microsoft.VisualStudio.2022.Professional
 winget install Mozilla.Firefox
 winget install JetBrains.DataGrip
-winget install 9PGCV4V3BK4W
+winget install 9PGCV4V3BK4W # DevToys
+winget install Microsoft.PowerShell # Update the last version of powershell

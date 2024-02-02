@@ -26,22 +26,10 @@ Set-Alias -Name nav -Value NAV_FN
 Function NAV_API_FN {cd C:\Users\dleroy\source\repos\navigation\api; $host.UI.RawUI.WindowTitle = "Nav API"}
 Set-Alias -Name api -Value NAV_API_FN
 
-Function NAV_MS_FN {cd C:\Users\dleroy\source\repos\navigation\microservices; $host.UI.RawUI.WindowTitle = "Microservices"}
-Set-Alias -Name microservices -Value NAV_MS_FN
+Function NAV_MS_FN {cd C:\Users\dleroy\source\repos\navigation\microservices; $host.UI.RawUI.WindowTitle = "Services"}
+Set-Alias -Name services -Value NAV_MS_FN
+Set-Alias -Name boom -Value NAV_MS_FN
 
-Function NAV_OA_FN {cd C:\Users\dleroy\source\repos\navigation\operation-access; $host.UI.RawUI.WindowTitle = "OperationAccess"}
-Set-Alias -Name operation-access -Value NAV_OA_FN
-
-Function NAV_BOOM_FN {cd C:\Users\dleroy\source\repos\navigation\boom; $host.UI.RawUI.WindowTitle = "Boom"}
-Set-Alias -Name boom -Value NAV_BOOM_FN
-
-Function NAV_DATAINJECTOR_FN {cd C:\Users\dleroy\source\repos\navigation\datainjector; $host.UI.RawUI.WindowTitle = "DataInjector"}
-Set-Alias -Name datainjector -Value NAV_DATAINJECTOR_FN
-
-# helper to turn PSCustomObject into a list of key/value pairs
-function GetlaunchSettingsEnvironmentVariable {
-    (Get-Content .\Properties\launchSettings.json | Out-String | ConvertFrom-Json).profiles."OperationAccess.Api".environmentVariables.ASPNETCORE_ENVIRONMENT
-}
 # Import the Chocolatey Profile that contains the necessary code to enable
 # tab-completions to function for `choco`.
 # Be aware that if you are missing these lines from your profile, tab completion
@@ -49,5 +37,5 @@ function GetlaunchSettingsEnvironmentVariable {
 # See https://ch0.co/tab-completion for details.
 $ChocolateyProfile = "$env:ChocolateyInstall\helpers\chocolateyProfile.psm1"
 if (Test-Path($ChocolateyProfile)) {
-  Import-Module "$ChocolateyProfile"
+  #Import-Module "$ChocolateyProfile"
 }
